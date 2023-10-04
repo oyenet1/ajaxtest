@@ -35,7 +35,7 @@ class PhotoUpload extends Component
 
         if ($uploaded) {
             $this->resetInput();
-            return redirect()->back()->with('status', 'Profile photo uploaded!');
+            return session()->flash('status', 'Profile photo uploaded!');
         }
     }
 

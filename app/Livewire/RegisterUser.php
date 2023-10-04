@@ -18,6 +18,12 @@ class RegisterUser extends Component
         $this->resetPage();
     }
 
+    function refreshInputs()
+    {
+        $this->name = '';
+        $this->email = '';
+    }
+
     public function updatingSearch()
     {
         $this->resetPage();
@@ -34,13 +40,13 @@ class RegisterUser extends Component
 
         if ($saved) {
             $this->reset();
-            return redirect()->to('/users')->with('status', 'User created!');
+            return session()->flash('status', 'User created!');
         }
     }
     public function render()
     {
         $term = "%" . $this->query . "%";
-        $users = User::where('name', 'LIKE', $term)->paginate($this->perPage);
+        $users = User::where('name', 'LIKE', $term)->orderByDesc('id')->paginate($this->perPage);
         return view('livewire.register-user', compact(['users']));
     }
 }
