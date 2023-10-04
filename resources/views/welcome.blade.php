@@ -25,8 +25,10 @@
         </ol>
     </div>
     <p class="flex items-center justify-center space-x-4">
-        <a href="" class="inline-block px-6 py-2 text-white bg-blue-600 rounded-md shadow-sm b">Solution 1</a>
-        <a href="" class="inline-block px-6 py-2 text-white bg-blue-600 rounded-md shadow-sm b">Solution 2</a>
+        <a href="{{ route('users') }}"
+            class="inline-block px-6 py-2 text-white bg-blue-600 rounded-md shadow-sm b">Solution 1</a>
+        <a href="{{ route('upload', [1]) }}"
+            class="inline-block px-6 py-2 text-white bg-blue-600 rounded-md shadow-sm b">Solution 2</a>
     </p>
 </div>
 @endsection

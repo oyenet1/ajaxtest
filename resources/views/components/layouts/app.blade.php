@@ -5,19 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ $title ?? 'Page Title' }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800,900&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="relative flex-col items-center justify-center w-screen h-screen p-4 antialiased lg:flex bg-slate-200">
-    @yield('content')
-    {{-- {{ $slot ?? '' }} --}}
+    {{ $slot ?? '' }}
     <p class="px-6 py-1 my-2 font-medium bg-white border border-gray-300 rounded shadow-sm">
         Designed and Coded by <a href="https://bowofade.com"
             class="inline-block italic font-medium text-center text-blue-500"><b>Bowofade</b></a>

@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn () => view('welcome'));
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,4 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+Route::get('/users', \App\Livewire\RegisterUser::class)->name('users');
+Route::get('/user/{user?}/upload', \App\Livewire\PhotoUpload::class)->name('upload');
+
+require __DIR__ . '/auth.php';
