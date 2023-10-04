@@ -12,13 +12,13 @@
     <form wire:submit.prevent="save"
         class="flex flex-wrap items-center justify-start p-2 mx-auto my-2 space-x-3 bg-gray-100">
         <div class="max-w-xs">
-            <input type="text" wire:model="name" placeholder="Name" class="w-full p-2 border rounded-md">
+            <input type="text" wire:model.live="name" placeholder="Name" class="w-full p-2 border rounded-md">
             @error('name')
             <small class="text-red-600">{{ $message }}</small>
             @enderror
         </div>
         <div class="max-w-xs">
-            <input type="text" wire:model="email" placeholder="Email address" class="w-full p-2 border rounded-md">
+            <input type="text" wire:model.live="email" placeholder="Email address" class="w-full p-2 border rounded-md">
             @error('email')
             <small class="text-red-600">{{ $message }}</small>
             @enderror

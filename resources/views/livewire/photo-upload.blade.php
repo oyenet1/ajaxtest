@@ -29,7 +29,7 @@
         </div>
         <form wire:submit.prevent="uploadImage" class="max-w-xs py-4 mx-auto space-y-2">
             <div class="w-full">
-                <input type="file" wire:model="image" id="" class="max-w-xs p-2 border rounded-md">
+                <input type="file" wire:model.live="image" id="" class="max-w-xs p-2 border rounded-md">
                 @error('image')
                 <small class="text-red-600">{{ $message }}</small>
                 @enderror
